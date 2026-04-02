@@ -9,6 +9,7 @@ public class GreeterTest {
     @Test
     public void testSaysHello() {
         Greeter greeter = new Greeter();
+        greeter.setFormality(null);
         assertEquals("Hello.", greeter.greet());
     }
 
@@ -31,6 +32,13 @@ public class GreeterTest {
         Greeter greeter = new Greeter();
         greeter.setFormality("intimate");
         assertEquals("Hello Darling!", greeter.greet());
+    }
+
+    @Test
+    public void testSaysGoHome() {
+        Greeter greeter = new Greeter();
+        greeter.setFormality("gohome");
+        assertEquals("Go Home!", greeter.greet());
     }
 
     @Test
