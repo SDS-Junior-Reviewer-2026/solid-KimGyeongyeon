@@ -5,6 +5,10 @@ import weather.WeatherTracker;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class WeatherTrackerTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
