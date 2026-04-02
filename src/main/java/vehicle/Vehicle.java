@@ -10,9 +10,8 @@ public class Vehicle {
         remainingFuel = maxFuel;
     }
 
-    // this is not a car's responsibility.
-    public void reFuel(){
-        remainingFuel = maxFuel;
+    public void addFuel(int amount) {
+        remainingFuel = Math.min(remainingFuel + amount, maxFuel);
     }
 
     public int getMaxFuel() {
