@@ -33,6 +33,7 @@ class DefaultGreeting implements GreetingStrategy {
 // 3. 전략을 싱글톤으로 제공하는 팩토리
 class GreetingFactory {
     private static final Map<String, GreetingStrategy> STRATEGIES;
+    private static final GreetingStrategy DEFAULT_STRATEGY = new DefaultGreeting();
 
     static {
         Map<String, GreetingStrategy> map = new HashMap<>();
@@ -42,7 +43,11 @@ class GreetingFactory {
         STRATEGIES = Collections.unmodifiableMap(map);
     }
 
+    public static GreetingStrategy getStrategy() {
+        return DEFAULT_STRATEGY;
+    }
+
     public static GreetingStrategy getStrategy(String formality) {
-        return STRATEGIES.getOrDefault(formality, new DefaultGreeting());
+        return STRATEGIES.getOrDefault(formality, DEFAULT_STRATEGY);
     }
 }

@@ -1,7 +1,7 @@
 package greeter;
 
 public class Greeter {
-    GreetingStrategy strategy = GreetingFactory.getStrategy(null);
+    GreetingStrategy strategy = GreetingFactory.getStrategy();
 
     public String greet() {
         return strategy.greet();
